@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Response</title>
+    <script>
+        function displayResponse() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('message');
+            const receivedName = urlParams.get('receivedName');
+            const receivedAge = urlParams.get('receivedAge');
+
+            document.getElementById('response').innerText = JSON.stringify({
+                message: message,
+                receivedName: receivedName,
+                receivedAge: receivedAge
+            }, null, 2);
+        }
+    </script>
+</head>
+<body onload="displayResponse()">
+    <h1>Response from Servlet</h1>
+    <pre id="response"></pre>
+</body>
+</html>
